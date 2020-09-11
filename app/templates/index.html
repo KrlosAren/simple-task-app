@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title%} {{username}} {{ super()}}{%
+endblock%} {% block content%}
+<div class="container main">
+  <div class="main__item--text">
+    <h1>Que no se te olvide nada, optimiza tu tiempo !</h1>
+  </div>
+  <div class="main__item--content">
+    <img src="{{url_for('static', filename='images/main_.svg')}}" alt="">
+    <span>
+      <h2>
+        Organiza todas tus tareas.<br> No dejes que alguna se te escape!.
+      </h2>
+      <p>
+        Tareas para hoy:
+        <ul>
+          <li>Escuchar Buenas Música.</li>
+          <li>Salir a correr.</li>
+          <li>Tomar un buen Café</li>
+        </ul>
+      </p>
+        <a href="{{url_for('auth.signup')}}">
+          <button  class="button button-primary">
+            Sign Up
+          </button>
+        </a>
+    </span>
+  </div>
+</div>
+{%endblock%}

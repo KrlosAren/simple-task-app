@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{%block title%}
+{{super()}}
+Login
+{%endblock%}
+{%block content%}
+<div class="container main">
+  <div class="main__item--text">
+    <h1>Que genial verte aqui. Preparado para un gran dia!</h1>
+  </div>
+  <div class="main__item--content">
+    <img src="{{url_for('static', filename='images/main_login-01.svg')}}" alt="">
+    <span class="form__signup">
+      <h2>Inicia Sesion</h2>
+      {{ wtf.quick_form(login_form, extra_classes='form__signup')}}
+    </span>
+  </div>
+</div>
+{%endblock%}

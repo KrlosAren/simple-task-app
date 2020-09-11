@@ -1,0 +1,35 @@
+<div class="container__navbar">
+  <nav class="navegation container">
+    <div class="left">
+      {% if current_user.is_authenticated%}
+      <a href="{{url_for('main')}}">
+        <img
+          src="{{url_for('static', filename='images/main_task.svg')}}"
+          alt="home"
+        />
+      </a>
+      {% else %}
+      <a href="/">
+        <img
+          src="{{url_for('static', filename='images/main_task.svg')}}"
+          alt="home"
+        />
+      </a>
+      {% endif%}
+    </div>
+    <div class="right">
+      {% if current_user.is_authenticated %}
+      <a href="{{url_for('auth.logout')}}">
+        <button type="submit" class="button button-secondary">Log Out</button>
+      </a>
+      {% else %}
+      <a href="{{url_for('auth.login')}}">
+        <button class="button button-secondary">Log In</button>
+      </a>
+      <a href="{{url_for('auth.signup')}}">
+        <button class="button button-primary">Sign Up</button>
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% import 'macros.html' as macros %}
+
+ {% block title%}
+  {{username}} 
+  {{ super()}}
+  {%endblock%} 
+  {% block content%}
+  <div class="container main main__dashboard">
+    <div class="main__item--text">
+      <h1>Hola, {{username | capitalize}}!. Disfruta tu dia.</h1>
+    </div>
+    <div class="main__item--content dashboard">
+        <h3>Crear nueva tarea</h3>
+        {{ wtf.quick_form(todo_form)}}
+        <div class="dashboard__content">
+            {% for todo in todos %}
+            <div class="dashboard__items">
+              {{macros.render_todo(todo, delete_form) }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </div>
+  {%endblock%}
+  
