@@ -216,7 +216,7 @@ body {
   border: 1px solid #ff4b5c;
 }
 
-.dashboard input[type=submit] {
+.dashboard  input[type=submit] {
   text-align: center;
   border: none;
   padding: 0.6em 1.5em;
@@ -266,13 +266,36 @@ body {
   width: auto ;
   display: flex;
   align-items: center ;
+  margin: 0 10px;
 }
 
-.dashboard__buttons > form > input[type=submit] {
+.dashboard__buttons > form:last-child > input[type=submit]{
   background-color: #ffadb6;
 }
 
+
+
 /* ----------------------- dashboard ----------------------- */
+
+
+
+
+/* ----------------------- 404 ----------------------- */
+
+.error404 > h1 {
+  grid-row: 1/2;
+}
+
+.error404 img {
+  grid-row: 2/3;
+  max-height: calc(100vh - 196.78px);
+}
+
+.error404 div {
+  border: 1px solid red;
+}
+
+/* ----------------------- 404 ----------------------- */
 
 /* ----------------------- buttons ----------------------- */
 

@@ -17,7 +17,7 @@
         <div class="dashboard__content">
             {% for todo in todos %}
             <div class="dashboard__items">
-              {{macros.render_todo(todo, delete_form) }}
+              {{macros.render_todo(todo, delete_form, update_form) }}
             </div>
             {% endfor %}
         </div>

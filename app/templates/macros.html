@@ -1,15 +1,18 @@
-{% import 'bootstrap/wtf.html' as wtf %} {% macro render_todo(todo,
-delete_form)%}
+{% import 'bootstrap/wtf.html' as wtf %} {% macro render_todo(todo, delete_form,
+update_form)%}
 <div>
   <b>Description:</b>
   <p>{{todo.to_dict().description}}</p>
-  {{todo.to_dict().delete_form}}
 </div>
-<span class="button-primary">
-  {% if todo.to_dict().done %} Terminada {% else %} Por Hacer {% endif %}
-</span>
+{% if todo.to_dict().done %}
+<span class="btn btn-success"> Terminada </span>
+{% else %}
+<span class="btn btn-danger"> Por Hacer </span>
+{% endif %}
 <div class="dashboard__buttons">
-  <button class="button button-primary">Terminar</button>
-    {{ wtf.quick_form(delete_form, action=url_for('delete', todo_id=todo.id), extra_classes='button-secondary') }}
+  {% if todo.to_dict().done  is not true %}
+  {{wtf.quick_form(update_form, action=url_for('update', todo_id=todo.id, done=todo.to_dict().done),extra_classes='button-secondary') }}
+  {%endif%}
+  {{wtf.quick_form(delete_form, action=url_for('delete', todo_id=todo.id),extra_classes='button-secondary') }}
 </div>
 {% endmacro %}

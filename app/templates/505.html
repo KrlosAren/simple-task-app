@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% import 'macros.html' as macros %}
+
+ {% block title%}
+  {{username}} 
+  {{ super()}}
+  {%endblock%} 
+  {% block content%}
+  <div class="container main error404">
+    <h1>Sorry 😥 . Estamos en mantenimiento</h1>
+      <img src="{{url_for('static', filename='images/500_main-01.svg')}}" alt="main_404">
+  </div>
+  {%endblock%}
+  

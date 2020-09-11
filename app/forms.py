@@ -16,3 +16,7 @@ class TodosForm(FlaskForm):
 
 class DeleteTodo(FlaskForm):
     submit = SubmitField('Borrar')
+
+
+class UpdateTodo(FlaskForm):
+        submit = SubmitField('Terminar')

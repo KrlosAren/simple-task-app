@@ -43,9 +43,14 @@ def read_todo(user_id):
 
 
 def delete_todo(user_id, todo_id):
-    todo_ref = get_todo_ref(todo_id)
+    todo_ref = get_todo_ref(user_id=user_id,todo_id=todo_id)
     todo_ref.delete()
 
+
+def update_todo(user_id, todo_id, done):
+    todo_done = not bool(done)
+    todo_ref = get_todo_ref(user_id=user_id, todo_id=todo_id)
+    todo_ref.update({'done': todo_done})
 
 def get_todo_ref(user_id, todo_id):
     return db.document(f'users/{user_id}/todos/{todo_id}')
