@@ -15,9 +15,9 @@ pip install -r requirements.txt
 Now **Deployment** try run this script to see the project on your computer.
 
 ```
-flask run
+bash run.sh
 ```
-_Now see the project in_ **localhost:5000**
+_Now see the project in_ **localhost:3000**
 
 ## :pill: Technologies
 1. Pthon
