@@ -1,4 +1,4 @@
-from flask import request, make_response, redirect, render_template, session, url_for, flash
+from flask import request, make_response, redirect, render_template, session, url_for, flash, request
 from flask_bootstrap import Bootstrap
 import unittest
 from flask_login import login_required, current_user
@@ -23,6 +23,7 @@ def server_not_found(error):
 
 @app.route('/')
 def index():
+    print(request.remote_addr)
     return redirect(url_for('home'))
 
 
@@ -52,7 +53,7 @@ def main():
     }
 
     if todo_form.validate_on_submit():
-        create_todo(user_id=current_uid,
+        create_todo(user_id=current_user.id,
                     description=todo_form.descripcion.data)
 
         flash('La tarea ha sido creada con exito', 'success')
