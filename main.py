@@ -56,7 +56,7 @@ def main():
         create_todo(user_id=current_user.id,
                     description=todo_form.descripcion.data)
 
-        flash('La tarea ha sido creada con exito', 'success')
+        flash('La tarea ha sido creada con exito 🥳', 'success')
 
         return redirect(url_for('main'))
 
@@ -68,7 +68,7 @@ def delete(todo_id):
     user_id = get_user_id(username=current_user.username)
     delete_todo(user_id=user_id, todo_id=todo_id)
 
-    flash('La tarea ha sido eliminada', 'success')
+    flash('La tarea ha sido eliminada 😁', 'success')
     return redirect(url_for('main'))
 
 
@@ -77,5 +77,5 @@ def update(todo_id, done):
     user_id = get_user_id(username=current_user.username)
     update_todo(user_id=user_id, todo_id=todo_id, done=done)
 
-    flash('La tarea ha sido actualizada', 'success')
+    flash('La tarea ha sido actualizada 😎', 'success')
     return redirect(url_for('main'))

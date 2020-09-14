@@ -22,10 +22,11 @@ def signup():
         username = signup_form.username.data
         password = signup_form.password.data
 
-        user_doc = get_user(user_id=username)
-        print(user_doc.to_dict())
+        user_doc = get_user_id(username=username)
 
-        if user_doc.to_dict() is None:
+        print(user_doc)
+
+        if user_doc is None:
             uid = uuid.uuid1()
             password_hash = generate_password_hash(password)
             user_data = UserData(uid, username, password_hash)
@@ -35,7 +36,7 @@ def signup():
             user = UserModel(user_data)
             login_user(user)
 
-            flash(f'Login Successfull', 'success')
+            flash(f'Que genial 😁 - Comencemos', 'success')
 
             return redirect(url_for('main'))
 
@@ -72,19 +73,20 @@ def login():
 
                 login_user(user)
 
-                flash('Que bueno verte - Comienza con tus tareas', 'success')
+                flash('Que bueno verte 😁 - Comienza con tus tareas', 'success')
                 redirect(url_for('main'))
 
             else:
-                flash('La informacion no coincide', 'danger')
+                flash('La informacion no coincide 😆', 'danger')
 
         else:
-            flash('El usuario no existe', 'danger')
+            flash('El usuario no existe 😅', 'danger')
             return redirect(url_for('auth.login'))
 
         return redirect(url_for('main'))
 
     return render_template('login.html', **context)
+
 
 @auth.route('/logout')
 @login_required
