@@ -3,6 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from .models import UserModel
 from flask_wtf import CsrfProtect
+from flask_cors import CORS
 
 from .config import Config
 from .auth import auth
@@ -11,6 +12,7 @@ from .auth import auth
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 csrf = CsrfProtect()
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -27,7 +29,7 @@ def create_app():
 
     csrf.init_app(app)
     login_manager.init_app(app)
-
+    CORS(app)
     app.config.from_object(Config)
     app.register_blueprint(auth)
 
