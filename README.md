@@ -21,7 +21,7 @@ _Now see the project in_ **localhost:3000**
 
 ## Preview :art:
 
-You can see the live result here → [Article Preview Component](https://todo-user-project.uc.r.appspot.com/home)
+You can see the live result here → [Site Preview](https://todo-user-project.uc.r.appspot.com/home)
 
 🖥 Desktop version
 
