@@ -1,7 +1,7 @@
 {% import 'bootstrap/wtf.html' as wtf %} {% macro render_todo(todo, delete_form,
 update_form)%}
 <div>
-  <b>Description:</b>
+  <b>Descripción:</b>
   <p>{{todo.to_dict().description}}</p>
 </div>
 {% if todo.to_dict().done %}

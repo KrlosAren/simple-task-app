@@ -74,16 +74,15 @@ def login():
                 login_user(user)
 
                 flash('Que bueno verte 😁 - Comienza con tus tareas', 'success')
-                redirect(url_for('main'))
+                return redirect(url_for('main'))
 
             else:
                 flash('La informacion no coincide 😆', 'danger')
+                return redirect(url_for('auth.login'))
 
         else:
             flash('El usuario no existe 😅', 'danger')
             return redirect(url_for('auth.login'))
-
-        return redirect(url_for('main'))
 
     return render_template('login.html', **context)
 

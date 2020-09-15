@@ -19,4 +19,4 @@ class DeleteTodo(FlaskForm):
 
 
 class UpdateTodo(FlaskForm):
-        submit = SubmitField('Terminar')
+    submit = SubmitField('Terminar')
