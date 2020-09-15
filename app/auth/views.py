@@ -92,4 +92,5 @@ def login():
 def logout():
     logout_user()
 
+    flash('Regresa pronto 😋', 'success')
     return redirect(url_for('auth.login'))
